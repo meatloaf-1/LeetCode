@@ -1,3 +1,3 @@
-# My LeetCode solutions.
+# My LeetCode solutions
 
-Managed by Leetpush.
+Posted via Leetpush.
