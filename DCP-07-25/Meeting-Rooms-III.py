@@ -2,17 +2,17 @@ import heapq
 class Solution:
     def mostBooked(self, n: int, meetings: List[List[int]]) -> int:
         meetings.sort()
-        available = list(range(n))
-        heapq.heapify(available)
+        avl = list(range(n))
+        heapq.heapify(avl)
         ongoing = []
         count = [0] * n
 
         for start, end in meetings:
             while ongoing and ongoing[0][0] <= start:
                 _, room = heapq.heappop(ongoing)
-                heapq.heappush(available, room)
-            if available:
-                room = heapq.heappop(available)
+                heapq.heappush(avl, room)
+            if avl:
+                room = heapq.heappop(avl)
                 heapq.heappush(ongoing, (end, room))
                 count[room] += 1
             else:
